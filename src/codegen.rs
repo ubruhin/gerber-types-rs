@@ -137,7 +137,7 @@ impl GerberCode for Command {
 impl GerberCode for ExtendedCode {
     fn to_code(&self) -> String {
         match *self {
-            ExtendedCode::CoordinateFormat(ref x, ref y) => format!("%FSLAX{0}{1}Y{0}{1}*%", x, y),
+            ExtendedCode::CoordinateFormat(ref cf) => format!("%FSLAX{0}{1}Y{0}{1}*%", cf.0, cf.1),
             ExtendedCode::Unit(ref unit) => format!("%MO{}*%", unit.to_code()),
             ExtendedCode::ApertureDefinition(ref def) => format!("%ADD{}*%", def.to_code()),
             ExtendedCode::ApertureMacro => panic!("not yet implemented"),

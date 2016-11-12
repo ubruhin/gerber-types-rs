@@ -97,15 +97,15 @@ mod test {
     #[test]
     fn test_coordinates() {
         macro_rules! assert_coords {
-            ($x:expr, $y:expr, $result:expr) => {{
-                assert_eq!(Coordinates { x: $x, y: $y }.to_code(), $result.to_string());
+            ($x:expr, $y:expr, $f:expr, $result:expr) => {{
+                assert_eq!(Coordinates { x: $x, y: $y, format: $f }.to_code(), $result.to_string());
             }}
         }
-        assert_coords!(Some(10), Some(20), "X10Y20");
-        assert_coords!(None, None, ""); // TODO should we catch this?
-        assert_coords!(Some(10), None, "X10");
-        assert_coords!(None, Some(20), "Y20");
-        assert_coords!(Some(0), Some(-400), "X0Y-400");
+        assert_coords!(Some(10), Some(20), CoordinateFormat(4, 4), "X100000Y200000");
+        assert_coords!(None, None, CoordinateFormat(4, 4), ""); // TODO should we catch this?
+        assert_coords!(Some(10), None, CoordinateFormat(4, 4), "X100000");
+        assert_coords!(None, Some(20), CoordinateFormat(4, 6), "Y20000000");
+        assert_coords!(Some(0), Some(-400), CoordinateFormat(4, 4), "X0Y-4000000");
     }
 
     #[test]
@@ -125,33 +125,33 @@ mod test {
     #[test]
     fn test_operation_interpolate() {
         let c1 = Operation::Interpolate(
-            Coordinates::new(100, 200),
+            Coordinates::new(1, 2, CoordinateFormat(2, 5)),
             Some(CoordinateOffset::new(5, 10))
         );
-        assert_eq!(c1.to_code(), "X100Y200I5J10D01*".to_string());
+        assert_eq!(c1.to_code(), "X100000Y200000I5J10D01*".to_string());
         let c2 = Operation::Interpolate(
-            Coordinates::at_y(-200),
+            Coordinates::at_y(-2, CoordinateFormat(4, 4)),
             None
         );
-        assert_eq!(c2.to_code(), "Y-200D01*".to_string());
+        assert_eq!(c2.to_code(), "Y-20000D01*".to_string());
         let c3 = Operation::Interpolate(
-            Coordinates::at_x(1),
+            Coordinates::at_x(1, CoordinateFormat(4, 4)),
             Some(CoordinateOffset::at_y(2))
         );
-        assert_eq!(c3.to_code(), "X1J2D01*".to_string());
+        assert_eq!(c3.to_code(), "X10000J2D01*".to_string());
     }
 
 
     #[test]
     fn test_operation_move() {
-        let c = Operation::Move(Coordinates::new(23, 42));
-        assert_eq!(c.to_code(), "X23Y42D02*".to_string());
+        let c = Operation::Move(Coordinates::new(23, 42, CoordinateFormat(6, 4)));
+        assert_eq!(c.to_code(), "X230000Y420000D02*".to_string());
     }
 
     #[test]
     fn test_operation_flash() {
-        let c = Operation::Flash(Coordinates::new(23, 42));
-        assert_eq!(c.to_code(), "X23Y42D03*".to_string());
+        let c = Operation::Flash(Coordinates::new(23, 42, CoordinateFormat(4, 4)));
+        assert_eq!(c.to_code(), "X230000Y420000D03*".to_string());
     }
 
     #[test]
@@ -164,7 +164,7 @@ mod test {
 
     #[test]
     fn test_coordinate_format() {
-        let c = ExtendedCode::CoordinateFormat(2, 5);
+        let c = ExtendedCode::CoordinateFormat(CoordinateFormat(2, 5));
         assert_eq!(c.to_code(), "%FSLAX25Y25*%".to_string());
     }
 

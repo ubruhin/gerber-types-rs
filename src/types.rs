@@ -1,3 +1,9 @@
+//! Types for Gerber code generation.
+//!
+//! All types are stateless, meaning that they contain all information in order
+//! to render themselves. This means for example that each `Coordinates`
+//! instance contains a reference to the coordinate format to be used.
+
 /// Coordinates are part of an operation.
 ///
 /// Coordinates are modal. If an X is omitted, the X coordinate of the
@@ -6,19 +12,20 @@
 pub struct Coordinates {
     pub x: Option<i32>,
     pub y: Option<i32>,
+    pub format: CoordinateFormat,
 }
 
 impl Coordinates {
-    pub fn new(x: i32, y: i32) -> Self {
-        Coordinates { x: Some(x), y: Some(y) }
+    pub fn new(x: i32, y: i32, format: CoordinateFormat) -> Self {
+        Coordinates { x: Some(x), y: Some(y), format: format }
     }
 
-    pub fn at_x(x: i32) -> Self {
-        Coordinates { x: Some(x), y: None }
+    pub fn at_x(x: i32, format: CoordinateFormat) -> Self {
+        Coordinates { x: Some(x), y: None, format: format }
     }
 
-    pub fn at_y(y: i32) -> Self {
-        Coordinates { x: None, y: Some(y) }
+    pub fn at_y(y: i32, format: CoordinateFormat) -> Self {
+        Coordinates { x: None, y: Some(y), format: format }
     }
 }
 
@@ -66,7 +73,7 @@ pub enum FunctionCode {
 #[derive(Debug)]
 pub enum ExtendedCode {
     /// FS
-    CoordinateFormat(u8, u8),
+    CoordinateFormat(CoordinateFormat),
     /// MO
     Unit(Unit),
     /// AD
@@ -129,6 +136,9 @@ pub enum QuadrantMode {
 
 
 // Extended codes
+
+#[derive(Debug, Copy, Clone)]
+pub struct CoordinateFormat(pub u8, pub u8);
 
 #[derive(Debug)]
 pub enum Unit {
