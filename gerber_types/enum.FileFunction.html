@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `FileFunction` enum in crate `gerber_types`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, FileFunction">
+
+    <title>gerber_types::FileFunction - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>gerber_types</a></p><script>window.sidebarCurrent = {name: 'FileFunction', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>gerber_types</a>::<wbr><a class='enum' href=''>FileFunction</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-446' class='srclink' href='../src/gerber_types/src/attributes.rs.html#89-115' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum FileFunction {
+    Copper {
+        layer: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+        pos: <a class='enum' href='../gerber_types/enum.ExtendedPosition.html' title='gerber_types::ExtendedPosition'>ExtendedPosition</a>,
+        copper_type: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='enum' href='../gerber_types/enum.CopperType.html' title='gerber_types::CopperType'>CopperType</a>&gt;,
+    },
+    Soldermask {
+        pos: <a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>,
+        index: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;,
+    },
+    Legend {
+        pos: <a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>,
+        index: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;,
+    },
+    Goldmask {
+        pos: <a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>,
+        index: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;,
+    },
+    Silvermask {
+        pos: <a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>,
+        index: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;,
+    },
+    Tinmask {
+        pos: <a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>,
+        index: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;,
+    },
+    Carbonmask {
+        pos: <a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>,
+        index: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;,
+    },
+    Peelablesoldermask {
+        pos: <a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>,
+        index: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;,
+    },
+    Glue {
+        pos: <a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>,
+        index: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;,
+    },
+    Viatenting(<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>),
+    Viafill,
+    Heatsink(<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>),
+    Paste(<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>),
+    KeepOut(<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>),
+    Pads(<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>),
+    Scoring(<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>),
+    Plated {
+        from_layer: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+        to_layer: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+        drill: <a class='enum' href='../gerber_types/enum.Drill.html' title='gerber_types::Drill'>Drill</a>,
+        label: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='enum' href='../gerber_types/enum.DrillRouteType.html' title='gerber_types::DrillRouteType'>DrillRouteType</a>&gt;,
+    },
+    NonPlated {
+        from_layer: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+        to_layer: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+        drill: <a class='enum' href='../gerber_types/enum.Drill.html' title='gerber_types::Drill'>Drill</a>,
+        label: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='enum' href='../gerber_types/enum.DrillRouteType.html' title='gerber_types::DrillRouteType'>DrillRouteType</a>&gt;,
+    },
+    Profile(<a class='enum' href='../gerber_types/enum.Profile.html' title='gerber_types::Profile'>Profile</a>),
+    Drillmap,
+    FabricationDrawing,
+    ArrayDrawing,
+    AssemblyDrawing(<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>),
+    Drawing(<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>),
+    Other(<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>),
+}</pre><h2 class='variants'>Variants</h2>
+<span id='variant.Copper' class='variant'><span id='Copper.v' class='invisible'><code>Copper</code></span></span><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Copper.field.layer'><span id='Copper.v.layer.v' class='invisible'><code>layer:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code></span></td><td></td></tr><tr><td id='variant.Copper.field.pos'><span id='Copper.v.pos.v' class='invisible'><code>pos:&nbsp;<a class='enum' href='../gerber_types/enum.ExtendedPosition.html' title='gerber_types::ExtendedPosition'>ExtendedPosition</a></code></span></td><td></td></tr><tr><td id='variant.Copper.field.copper_type'><span id='Copper.v.copper_type.v' class='invisible'><code>copper_type:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='enum' href='../gerber_types/enum.CopperType.html' title='gerber_types::CopperType'>CopperType</a>&gt;</code></span></td><td></td></tr></table><span id='variant.Soldermask' class='variant'><span id='Soldermask.v' class='invisible'><code>Soldermask</code></span></span><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Soldermask.field.pos'><span id='Soldermask.v.pos.v' class='invisible'><code>pos:&nbsp;<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a></code></span></td><td></td></tr><tr><td id='variant.Soldermask.field.index'><span id='Soldermask.v.index.v' class='invisible'><code>index:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;</code></span></td><td></td></tr></table><span id='variant.Legend' class='variant'><span id='Legend.v' class='invisible'><code>Legend</code></span></span><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Legend.field.pos'><span id='Legend.v.pos.v' class='invisible'><code>pos:&nbsp;<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a></code></span></td><td></td></tr><tr><td id='variant.Legend.field.index'><span id='Legend.v.index.v' class='invisible'><code>index:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;</code></span></td><td></td></tr></table><span id='variant.Goldmask' class='variant'><span id='Goldmask.v' class='invisible'><code>Goldmask</code></span></span><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Goldmask.field.pos'><span id='Goldmask.v.pos.v' class='invisible'><code>pos:&nbsp;<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a></code></span></td><td></td></tr><tr><td id='variant.Goldmask.field.index'><span id='Goldmask.v.index.v' class='invisible'><code>index:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;</code></span></td><td></td></tr></table><span id='variant.Silvermask' class='variant'><span id='Silvermask.v' class='invisible'><code>Silvermask</code></span></span><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Silvermask.field.pos'><span id='Silvermask.v.pos.v' class='invisible'><code>pos:&nbsp;<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a></code></span></td><td></td></tr><tr><td id='variant.Silvermask.field.index'><span id='Silvermask.v.index.v' class='invisible'><code>index:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;</code></span></td><td></td></tr></table><span id='variant.Tinmask' class='variant'><span id='Tinmask.v' class='invisible'><code>Tinmask</code></span></span><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Tinmask.field.pos'><span id='Tinmask.v.pos.v' class='invisible'><code>pos:&nbsp;<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a></code></span></td><td></td></tr><tr><td id='variant.Tinmask.field.index'><span id='Tinmask.v.index.v' class='invisible'><code>index:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;</code></span></td><td></td></tr></table><span id='variant.Carbonmask' class='variant'><span id='Carbonmask.v' class='invisible'><code>Carbonmask</code></span></span><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Carbonmask.field.pos'><span id='Carbonmask.v.pos.v' class='invisible'><code>pos:&nbsp;<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a></code></span></td><td></td></tr><tr><td id='variant.Carbonmask.field.index'><span id='Carbonmask.v.index.v' class='invisible'><code>index:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;</code></span></td><td></td></tr></table><span id='variant.Peelablesoldermask' class='variant'><span id='Peelablesoldermask.v' class='invisible'><code>Peelablesoldermask</code></span></span><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Peelablesoldermask.field.pos'><span id='Peelablesoldermask.v.pos.v' class='invisible'><code>pos:&nbsp;<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a></code></span></td><td></td></tr><tr><td id='variant.Peelablesoldermask.field.index'><span id='Peelablesoldermask.v.index.v' class='invisible'><code>index:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;</code></span></td><td></td></tr></table><span id='variant.Glue' class='variant'><span id='Glue.v' class='invisible'><code>Glue</code></span></span><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Glue.field.pos'><span id='Glue.v.pos.v' class='invisible'><code>pos:&nbsp;<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a></code></span></td><td></td></tr><tr><td id='variant.Glue.field.index'><span id='Glue.v.index.v' class='invisible'><code>index:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>&gt;</code></span></td><td></td></tr></table><span id='variant.Viatenting' class='variant'><span id='Viatenting.v' class='invisible'><code>Viatenting(<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>)</code></span></span><span id='variant.Viafill' class='variant'><span id='Viafill.v' class='invisible'><code>Viafill</code></span></span><span id='variant.Heatsink' class='variant'><span id='Heatsink.v' class='invisible'><code>Heatsink(<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>)</code></span></span><span id='variant.Paste' class='variant'><span id='Paste.v' class='invisible'><code>Paste(<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>)</code></span></span><span id='variant.KeepOut' class='variant'><span id='KeepOut.v' class='invisible'><code>KeepOut(<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>)</code></span></span><span id='variant.Pads' class='variant'><span id='Pads.v' class='invisible'><code>Pads(<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>)</code></span></span><span id='variant.Scoring' class='variant'><span id='Scoring.v' class='invisible'><code>Scoring(<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>)</code></span></span><span id='variant.Plated' class='variant'><span id='Plated.v' class='invisible'><code>Plated</code></span></span><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Plated.field.from_layer'><span id='Plated.v.from_layer.v' class='invisible'><code>from_layer:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code></span></td><td></td></tr><tr><td id='variant.Plated.field.to_layer'><span id='Plated.v.to_layer.v' class='invisible'><code>to_layer:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code></span></td><td></td></tr><tr><td id='variant.Plated.field.drill'><span id='Plated.v.drill.v' class='invisible'><code>drill:&nbsp;<a class='enum' href='../gerber_types/enum.Drill.html' title='gerber_types::Drill'>Drill</a></code></span></td><td></td></tr><tr><td id='variant.Plated.field.label'><span id='Plated.v.label.v' class='invisible'><code>label:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='enum' href='../gerber_types/enum.DrillRouteType.html' title='gerber_types::DrillRouteType'>DrillRouteType</a>&gt;</code></span></td><td></td></tr></table><span id='variant.NonPlated' class='variant'><span id='NonPlated.v' class='invisible'><code>NonPlated</code></span></span><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.NonPlated.field.from_layer'><span id='NonPlated.v.from_layer.v' class='invisible'><code>from_layer:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code></span></td><td></td></tr><tr><td id='variant.NonPlated.field.to_layer'><span id='NonPlated.v.to_layer.v' class='invisible'><code>to_layer:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code></span></td><td></td></tr><tr><td id='variant.NonPlated.field.drill'><span id='NonPlated.v.drill.v' class='invisible'><code>drill:&nbsp;<a class='enum' href='../gerber_types/enum.Drill.html' title='gerber_types::Drill'>Drill</a></code></span></td><td></td></tr><tr><td id='variant.NonPlated.field.label'><span id='NonPlated.v.label.v' class='invisible'><code>label:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='enum' href='../gerber_types/enum.DrillRouteType.html' title='gerber_types::DrillRouteType'>DrillRouteType</a>&gt;</code></span></td><td></td></tr></table><span id='variant.Profile' class='variant'><span id='Profile.v' class='invisible'><code>Profile(<a class='enum' href='../gerber_types/enum.Profile.html' title='gerber_types::Profile'>Profile</a>)</code></span></span><span id='variant.Drillmap' class='variant'><span id='Drillmap.v' class='invisible'><code>Drillmap</code></span></span><span id='variant.FabricationDrawing' class='variant'><span id='FabricationDrawing.v' class='invisible'><code>FabricationDrawing</code></span></span><span id='variant.ArrayDrawing' class='variant'><span id='ArrayDrawing.v' class='invisible'><code>ArrayDrawing</code></span></span><span id='variant.AssemblyDrawing' class='variant'><span id='AssemblyDrawing.v' class='invisible'><code>AssemblyDrawing(<a class='enum' href='../gerber_types/enum.Position.html' title='gerber_types::Position'>Position</a>)</code></span></span><span id='variant.Drawing' class='variant'><span id='Drawing.v' class='invisible'><code>Drawing(<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>)</code></span></span><span id='variant.Other' class='variant'><span id='Other.v' class='invisible'><code>Other(<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>)</code></span></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../gerber_types/enum.FileFunction.html' title='gerber_types::FileFunction'>FileFunction</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-509' class='srclink' href='../src/gerber_types/src/attributes.rs.html#88' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gerber_types";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

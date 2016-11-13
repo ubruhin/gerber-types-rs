@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ExtendedCode` enum in crate `gerber_types`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ExtendedCode">
+
+    <title>gerber_types::ExtendedCode - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>gerber_types</a></p><script>window.sidebarCurrent = {name: 'ExtendedCode', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>gerber_types</a>::<wbr><a class='enum' href=''>ExtendedCode</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-73' class='srclink' href='../src/gerber_types/src/types.rs.html#67-86' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum ExtendedCode {
+    CoordinateFormat(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>),
+    Unit(<a class='enum' href='../gerber_types/enum.Unit.html' title='gerber_types::Unit'>Unit</a>),
+    ApertureDefinition(<a class='struct' href='../gerber_types/struct.ApertureDefinition.html' title='gerber_types::ApertureDefinition'>ApertureDefinition</a>),
+    ApertureMacro,
+    LoadPolarity(<a class='enum' href='../gerber_types/enum.Polarity.html' title='gerber_types::Polarity'>Polarity</a>),
+    StepAndRepeat(<a class='enum' href='../gerber_types/enum.StepAndRepeat.html' title='gerber_types::StepAndRepeat'>StepAndRepeat</a>),
+    FileAttribute(<a class='enum' href='../gerber_types/enum.FileAttribute.html' title='gerber_types::FileAttribute'>FileAttribute</a>),
+    ApertureAttribute(<a class='enum' href='../gerber_types/enum.ApertureAttribute.html' title='gerber_types::ApertureAttribute'>ApertureAttribute</a>),
+    DeleteAttribute(<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>),
+}</pre><h2 class='variants'>Variants</h2>
+<span id='variant.CoordinateFormat' class='variant'><span id='CoordinateFormat.v' class='invisible'><code>CoordinateFormat(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>)</code></span></span><div class='docblock'><p>FS</p>
+</div><span id='variant.Unit' class='variant'><span id='Unit.v' class='invisible'><code>Unit(<a class='enum' href='../gerber_types/enum.Unit.html' title='gerber_types::Unit'>Unit</a>)</code></span></span><div class='docblock'><p>MO</p>
+</div><span id='variant.ApertureDefinition' class='variant'><span id='ApertureDefinition.v' class='invisible'><code>ApertureDefinition(<a class='struct' href='../gerber_types/struct.ApertureDefinition.html' title='gerber_types::ApertureDefinition'>ApertureDefinition</a>)</code></span></span><div class='docblock'><p>AD</p>
+</div><span id='variant.ApertureMacro' class='variant'><span id='ApertureMacro.v' class='invisible'><code>ApertureMacro</code></span></span><div class='docblock'><p>AM</p>
+</div><span id='variant.LoadPolarity' class='variant'><span id='LoadPolarity.v' class='invisible'><code>LoadPolarity(<a class='enum' href='../gerber_types/enum.Polarity.html' title='gerber_types::Polarity'>Polarity</a>)</code></span></span><div class='docblock'><p>LP</p>
+</div><span id='variant.StepAndRepeat' class='variant'><span id='StepAndRepeat.v' class='invisible'><code>StepAndRepeat(<a class='enum' href='../gerber_types/enum.StepAndRepeat.html' title='gerber_types::StepAndRepeat'>StepAndRepeat</a>)</code></span></span><div class='docblock'><p>SR</p>
+</div><span id='variant.FileAttribute' class='variant'><span id='FileAttribute.v' class='invisible'><code>FileAttribute(<a class='enum' href='../gerber_types/enum.FileAttribute.html' title='gerber_types::FileAttribute'>FileAttribute</a>)</code></span></span><div class='docblock'><p>TF</p>
+</div><span id='variant.ApertureAttribute' class='variant'><span id='ApertureAttribute.v' class='invisible'><code>ApertureAttribute(<a class='enum' href='../gerber_types/enum.ApertureAttribute.html' title='gerber_types::ApertureAttribute'>ApertureAttribute</a>)</code></span></span><div class='docblock'><p>TA</p>
+</div><span id='variant.DeleteAttribute' class='variant'><span id='DeleteAttribute.v' class='invisible'><code>DeleteAttribute(<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>)</code></span></span><div class='docblock'><p>TD</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../gerber_types/enum.ExtendedCode.html' title='gerber_types::ExtendedCode'>ExtendedCode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-92' class='srclink' href='../src/gerber_types/src/types.rs.html#66' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../gerber_types/trait.GerberCode.html' title='gerber_types::GerberCode'>GerberCode</a> for <a class='enum' href='../gerber_types/enum.ExtendedCode.html' title='gerber_types::ExtendedCode'>ExtendedCode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-795' class='srclink' href='../src/gerber_types/src/codegen.rs.html#137-152' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_code' class='method'><span id='to_code.v' class='invisible'><code>fn <a href='../gerber_types/trait.GerberCode.html#tymethod.to_code' class='fnname'>to_code</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code></span></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gerber_types";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>
