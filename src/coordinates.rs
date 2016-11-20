@@ -104,8 +104,8 @@ impl CoordinateNumber {
             return Err(GerberError::CoordinateFormatError("Number is too large for chosen format!".into()));
         }
 
-        let divisor: i64 = 10_i64.pow((DECIMAL_PLACES_CHARS - format.decimal) as u32);
-        let number: i64 = rounded_div(self.nano, divisor);
+        let divisor = 10_i64.pow((DECIMAL_PLACES_CHARS - format.decimal) as u32);
+        let number = rounded_div(self.nano, divisor);
         Ok(number.to_string())
     }
 }
