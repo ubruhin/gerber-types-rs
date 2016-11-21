@@ -7,6 +7,7 @@ use std::i64;
 use conv::TryFrom;
 
 use ::GerberError;
+use utils::rounded_div;
 
 
 /// The coordinate format specifies the number of integer and decimal places in
@@ -89,14 +90,6 @@ impl_from_integer!(u16);
 
 impl CoordinateNumber {
     pub fn gerber(&self, format: &CoordinateFormat) -> Result<String, GerberError> {
-        fn rounded_div(dividend: i64, divisor: i64) -> i64 {
-            if dividend.is_positive() == divisor.is_positive() {
-                (dividend + (divisor / 2)) / divisor
-            } else {
-                (dividend - (divisor / 2)) / divisor
-            }
-        }
-
         if format.decimal > DECIMAL_PLACES_CHARS {
             return Err(GerberError::CoordinateFormatError("Invalid precision: Too high!".into()))
         }
